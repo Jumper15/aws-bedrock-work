@@ -40,7 +40,7 @@ def invoke_agent(client, agent_id, alias_id, prompt, session_id):
 if __name__ == "__main__":
      client = boto3.client(
           service_name="bedrock-agent-runtime",
-          region_name="ap-southeast-2"
+          region_name=os.getenv("AWS_REGION")
      )
      
      agent_id = os.getenv("BEDROCK_AGENT_ID")
